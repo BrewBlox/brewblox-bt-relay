@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  server:
+    image: brewblox/brewblox-bt-relay:local
+    privileged: true
+    network_mode: host
+    volumes:
+      - ./:/app/
+    command: server
+
+  client:
+    image: brewblox/brewblox-bt-relay:local
+    volumes:
+      - ./:/app/
+    command: client
